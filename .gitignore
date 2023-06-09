@@ -1,0 +1,9 @@
+node_modules
+.idea
+.serverless
+*.pyc
+.env
+venv
+dev/
+.log
+sent_emails
