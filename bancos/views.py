@@ -19,7 +19,8 @@ class BancoViewset(viewsets.ReadOnlyModelViewSet):
 
     def retrieve(self, request, pk=None):
         queryset = Banco.objects.all()
-        banco = get_object_or_404(queryset, numero_codigo=pk)
+        busca = (str(pk).zfill(3))
+        banco = get_object_or_404(queryset, numero_codigo=busca)
         serializer = self.get_serializer(banco)
         return Response(serializer.data)
 
