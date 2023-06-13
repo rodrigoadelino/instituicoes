@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'bancos',
+    'django_crontab', 
     
 ]
 
@@ -113,3 +114,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CRONJOBS = [
+    ('*/2 * * * *', 'cron.my_scheduled_job', '>> /code/crontab_job.log')
+]
+
+
+# CRONJOBS = [
+#     ('0 9 * * * *', 'listabancos.cron.my_scheduled_job')
+# ]
