@@ -116,11 +116,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+
 CRONJOBS = [
-    ('*/2 * * * *', 'cron.my_scheduled_job', '>> /code/crontab_job.log')
+    ('0 11 * * * *', 'listabancos.cron.my_scheduled_job')
 ]
-
-
-# CRONJOBS = [
-#     ('0 9 * * * *', 'listabancos.cron.my_scheduled_job')
-# ]
